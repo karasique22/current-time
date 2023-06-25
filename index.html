@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>CurrentTime</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="timezone-container">
+            <div class="timezone"></div>
+            <div class="modal-1-trigger" data-micromodal-trigger="modal-1">
+                <i class="bi bi-pencil-square"></i>
+            </div>
+        </div>
+        <div class="time"></div>
+        <div class="date"></div>
+    </div>
+
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-1-title">
+                        Change timezone
+                    </h2>
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                </header>
+                <main class="modal__content" id="modal-1-content">
+                    <select name="timezone-selecter" id="timezone-selecter">
+                        <option value="">Select a timezone</option>
+                        <option value="America/New_York">America/New-York</option>
+                        <option value="Europe/Moscow">Europe/Moscow</option>
+                        <option value="Europe/London">Europe/London</option>
+                        <option value="Asia/Tokyo">Asia/Tokyo</option>
+                    </select>
+                </main>
+                <footer class="modal__footer">
+                    <button id="continue-btn" class="modal__btn modal__btn-primary">Continue</button>
+                    <button class="modal__btn" data-micromodal-close
+                        aria-label="Close this dialog window">Close</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/dayjs/dayjs.min.js"></script>
+    <script src="node_modules/dayjs/plugin/timezone.js"></script>
+    <script src="node_modules/dayjs/plugin/utc.js"></script>
+    <script src="node_modules/micromodal/dist/micromodal.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
